@@ -1,0 +1,2 @@
+- Accenture Coimbatore: Data Engineer - Application Development Analyst (March 2023 - Present)
+- Accenture Coimbatore: Data Engineer - Application Development Associate (June 2021 - February 2023)
