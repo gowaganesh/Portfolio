@@ -1,5 +1,4 @@
 import {
-  colors,
   List,
   ListItem,
   Typography,
