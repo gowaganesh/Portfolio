@@ -14,9 +14,9 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import { constants } from "@/lib/utils/constants/constants";
-import workExperienceBanner from "@/assets/bg3.jpg";
-import projectsBanner from "@/assets/bg1.jpg";
-import homeBannerImage from "@/assets/bg2.jpg";
+import workExperienceBanner from "../../assets/bg3.jpg";
+import projectsBanner from "../../assets/bg1.jpg";
+import homeBannerImage from "../../assets/bg2.jpg";
 
 const drawerWidth = 240;
 
@@ -54,6 +54,7 @@ const DrawerAppBar = () => {
       [HOME]: homeBannerImage,
       [PROJECTS]: projectsBanner,
     }[pathname || HOME];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const drawer = (
