@@ -8,21 +8,20 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import WorkExperience from "./workExperience";
 import Projects from "./projects";
+import { constants } from "@/lib/utils/constants/constants";
 
 const AboutIndex = () => {
   const { pathname } = useLocation();
-  console.log({
-    pathname,
-  });
-  const [currentPage, setCurrentPage] = useState<string>(() => pathname ? pathname :"/experience");
+  const { ABOUT , PROJECTS } = constants.ROUTES
+  const [currentPage, setCurrentPage] = useState<string>( pathname ? pathname : ABOUT);
   const aboutItems = [
     {
       label: "Work Experience",
-      path: "/experience",
+      path: ABOUT,
     },
     {
       label: "Projects",
-      path: "/projects",
+      path: PROJECTS,
     },
   ];
   const onClickSections = (item: string) => {
@@ -32,8 +31,8 @@ const AboutIndex = () => {
 
   const getPage = (page: string) => {
     return {
-      "/experience": <WorkExperience />,
-      "/projects": <Projects />,
+      [ABOUT]: <WorkExperience />,
+      [PROJECTS]: <Projects />,
     }[page];
   };
   return (
