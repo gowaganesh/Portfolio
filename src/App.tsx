@@ -46,7 +46,6 @@ function App() {
               key={item.key}
             />
           ))}
-          <Route path="/" element={<></>} />
         </Routes>
       </Container>
     </main>
