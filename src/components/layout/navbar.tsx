@@ -32,7 +32,7 @@ const DrawerAppBar = () => {
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
- 
+  
   // Memoizing navigation function
   const navigateToPage = React.useCallback((item: { label: string; path: string }) => {
     if (item.label === "Resume") {
