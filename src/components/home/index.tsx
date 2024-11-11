@@ -15,7 +15,7 @@ const HomeIndex = () => {
   return (
     <Box p={2}>
       <Section title="WORK">
-        I am currently working as {getHighLightedText("Data Engineer - Application Development Analyst")} at {getHighLightedText("Accenture")} in Coimbatore, where I focus on building and maintaining robust data integration solutions for {getHighLightedText("BANK OF AMERICA")}. My role involves {getHighLightedText("consolidating structured and semi-structured data")} from a variety of sources, including APIs, databases, and complex JSON files, ensuring data consistency and quality throughout.
+        I'm currently working as {getHighLightedText("Data Engineer - Application Development Analyst")} at {getHighLightedText("Accenture")} in Coimbatore, where I focus on building and maintaining robust data integration solutions for {getHighLightedText("BANK OF AMERICA")}. My role involves {getHighLightedText("consolidating structured and semi-structured data")} from a variety of sources, including APIs, databases, and complex JSON files, ensuring data consistency and quality throughout.
         <br />
         <br />
         In my current position, I {getHighLightedText("design and implement data pipelines")} using {getHighLightedText("Apache NiFi")} for history, monthly, and daily data loading, while managing slowly changing dimensions (SCD) to accommodate evolving data requirements. Additionally, I led an automation project that {getHighLightedText("reduced manual work by 97%")}, generating SQL DDL statements for over 90 tables with more than 2000 fields—a task that significantly streamlined our database management process.
