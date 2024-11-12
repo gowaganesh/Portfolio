@@ -4,9 +4,8 @@ import "./styles/App.css";
 import { Route, Routes } from 'react-router-dom';
 import { Container } from "@mui/material";
 import { constants } from "./lib/utils/constants/constants";
-
-const HomePage = lazy(() => import("@/components/home/index"));
-const AboutPage = lazy(() => import("@/components/about/index"));
+const HomePage = lazy(() => import("./components/home/index"));
+const AboutPage = lazy(() => import("./components/about/index"));
 
 function App() {
 

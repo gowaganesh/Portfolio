@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import WorkExperience from "./workExperience";
 import Projects from "./projects";
-import { constants } from "@/lib/utils/constants/constants";
+import { constants } from "../../lib/utils/constants/constants";
 
 const AboutIndex = () => {
   const { pathname } = useLocation();
