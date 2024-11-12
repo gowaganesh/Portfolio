@@ -32,7 +32,7 @@ function App() {
   return (
     <main className="h-full w-full">
       <Navbar />
-      <Container sx={{py:4 , height:'100%'}}>
+      <Container sx={{py:3 , height:'100%'}}>
         <Routes>
           {routeItems.map((item) => (
             <Route
