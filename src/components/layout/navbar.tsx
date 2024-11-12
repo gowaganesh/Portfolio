@@ -26,7 +26,7 @@ const DrawerAppBar = () => {
     { label: "Start Here", path: HOME },
     {
       label: "About",
-      path: "",
+      path: ABOUT,
       subMenu: [
         { label: "Experience", path: ABOUT },
         { label: "Projects", path: PROJECTS },
