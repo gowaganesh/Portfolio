@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://gowaganesh.github.io/Portfolio",
+  "homepage": "https://gowaganesh.github.io/Portfolio/#",
   "scripts": {
     "dev": "react-scripts start",
     "build": "tsc -b && react-scripts build",

@@ -4,8 +4,8 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import WorkExperience from "./workExperience";
 import Projects from "./projects";
 import { constants } from "../../lib/utils/constants/constants";
@@ -24,16 +24,19 @@ const AboutIndex = () => {
       path: PROJECTS,
     },
   ];
-  const onClickSections = (item: string) => {
-    setCurrentPage(item);
-    location.pathname = item
-  };
 
-  const getPage = (page: string) => {
+  console.log({
+    currentPage,pathname
+  })
+  useEffect(()=> {
+    setCurrentPage(pathname)
+  },[pathname])
+
+  const getPage = () => {
     return {
       [ABOUT]: <WorkExperience />,
       [PROJECTS]: <Projects />,
-    }[page];
+    }[currentPage];
   };
   return (
     <Grid container spacing={2}>
@@ -51,8 +54,8 @@ const AboutIndex = () => {
         <List>
           {aboutItems.map((item) => (
             <ListItem sx={{ py: 0 }}>
+              <Link to={item?.path} replace>
               <Typography
-                onClick={() => onClickSections(item?.path)}
                 sx={{
                   py: 0.5,
                   cursor: "pointer",
@@ -60,15 +63,16 @@ const AboutIndex = () => {
                   ":hover": { color: "black" },
                 }}
                 fontWeight={600}
-              >
+                >
                 {item?.label}
               </Typography>
+            </Link>
             </ListItem>
           ))}
         </List>
       </Grid>
       <Grid sx={{ flex: 1 }}>
-        {getPage(currentPage)}
+        {getPage()}
       </Grid>
     </Grid>
   );
