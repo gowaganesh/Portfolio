@@ -3,78 +3,102 @@ import {
   ListItem,
   Typography,
 } from "@mui/material";
-import Grid from "@mui/material/Grid2";
-import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import WorkExperience from "./workExperience";
-import Projects from "./projects";
+import Grid from "@mui/material/Grid";
+import { useEffect, useState, useMemo, lazy, Suspense } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { constants } from "../../lib/utils/constants/constants";
+import AppContainer from "../common/appContainer";
+import HeroImageContainer from "../layout/heroImageContainer";
+import useImageLoader from "../../lib/hooks/useImageLoader";
+
+const WorkExperience = lazy(() => import("./workExperience"));
+const Awards = lazy(() => import("./awards"));
+const Certifications = lazy(() => import("./certifications"));
+const Education = lazy(() => import("./education"));
+
+const loadImage = async () => {
+  const module = await import("../../assets/bg3.jpg");
+  return module.default;
+};
 
 const AboutIndex = () => {
   const { pathname } = useLocation();
-  const { ABOUT , PROJECTS } = constants.ROUTES
-  const [currentPage, setCurrentPage] = useState<string>( pathname ? pathname : ABOUT);
-  const aboutItems = [
-    {
-      label: "Work Experience",
-      path: ABOUT,
-    },
-    {
-      label: "Projects",
-      path: PROJECTS,
-    },
-  ];
+  const { ABOUT, AWARDS, CERTIFICATIONS, EDUCATION } = constants.ROUTES;
+  const [currentPage, setCurrentPage] = useState(pathname || ABOUT);
+  const imageUrl = useImageLoader(loadImage);
 
-  console.log({
-    currentPage,pathname
-  })
-  useEffect(()=> {
-    setCurrentPage(pathname)
-  },[pathname])
+  const aboutItems = useMemo(() => [
+    { label: "Work Experience", path: ABOUT },
+    { label: "Awards & Recognitions", path: AWARDS },
+    { label: "Certifications", path: CERTIFICATIONS },
+    { label: "Education", path: EDUCATION },
+  ], [ABOUT, AWARDS, CERTIFICATIONS, EDUCATION]);
+
+  useEffect(() => {
+    setCurrentPage(pathname);
+  }, [pathname]);
 
   const getPage = () => {
-    return {
-      [ABOUT]: <WorkExperience />,
-      [PROJECTS]: <Projects />,
-    }[currentPage];
+    switch (currentPage) {
+      case ABOUT:
+        return <WorkExperience />;
+      case AWARDS:
+        return <Awards />;
+      case CERTIFICATIONS:
+        return <Certifications />;
+      case EDUCATION:
+        return <Education />;
+      default:
+        return <WorkExperience />;
+    }
   };
+
   return (
-    <Grid container spacing={2}>
-      <Grid sx={{ flex: 0.3 , display:{xs:'none',sm:'block'} }}>
-        <Typography
-          color="textDisabled"
-          fontWeight={700}
-          variant="h6"
-          textAlign="start"
-          paddingLeft={2}
-          paddingTop={1}
-        >
-          About
-        </Typography>
-        <List>
-          {aboutItems.map((item) => (
-            <ListItem sx={{ py: 0 }}>
-              <Link to={item?.path} replace>
-              <Typography
-                sx={{
-                  py: 0.5,
-                  cursor: "pointer",
-                  color: item?.path === currentPage ? "black" : "GrayText",
-                  ":hover": { color: "black" },
-                }}
-                fontWeight={600}
-                >
-                {item?.label}
-              </Typography>
-            </Link>
-            </ListItem>
-          ))}
-        </List>
-      </Grid>
-      <Grid sx={{ flex: 1 }}>
-        {getPage()}
-      </Grid>
-    </Grid>
+    <>
+      {imageUrl && <HeroImageContainer imageUrl={imageUrl} />}
+      <AppContainer>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={3} sx={{ display: { xs: "none", sm: "block" } }}>
+            <Typography
+              color="textDisabled"
+              fontWeight={700}
+              variant="h6"
+              textAlign="start"
+              paddingLeft={2}
+              paddingTop={1}
+            >
+              About
+            </Typography>
+            <List>
+              {aboutItems.map(({ label, path }) => (
+                <ListItem key={path} sx={{ py: 0 }}>
+                  <Link to={path} replace>
+                    <Typography
+                      sx={{
+                        py: 0.5,
+                        cursor: "pointer",
+                        color: path === currentPage ? "black" : "GrayText",
+                        ":hover": { color: "black" },
+                        fontSize: path === currentPage ? 20 : 14,
+                      }}
+                      fontWeight={600}
+                    >
+                      {label}
+                    </Typography>
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          </Grid>
+
+          <Grid item xs={12} sm={9}>
+            <Suspense fallback={<Typography>Loading...</Typography>}>
+              {getPage()}
+            </Suspense>
+          </Grid>
+        </Grid>
+      </AppContainer>
+    </>
   );
 };
 

@@ -1,16 +1,16 @@
 import { lazy, Suspense } from "react";
 import Navbar from "./components/layout/navbar";
-import "./styles/App.css";
 import { Route, Routes } from 'react-router-dom';
-import { Container } from "@mui/material";
 import { constants } from "./lib/utils/constants/constants";
+import ProjectsPage from "./components/project";
+import { ThemeProvider } from "./lib/theme/appThemeProvider";
 const HomePage = lazy(() => import("./components/home/index"));
 const AboutPage = lazy(() => import("./components/about/index"));
 
 function App() {
 
-  const { ABOUT, HOME , PROJECTS } = constants.ROUTES;
-  
+  const { ABOUT, HOME, AWARDS, CERTIFICATIONS, EDUCATION, PROJECTS } = constants.ROUTES;
+
   const routeItems = [
     {
       key: HOME,
@@ -23,16 +23,31 @@ function App() {
       component: <AboutPage />,
     },
     {
-      key: PROJECTS,
-      path: PROJECTS,
+      key: AWARDS,
+      path: AWARDS,
       component: <AboutPage />,
     },
+    {
+      key: CERTIFICATIONS,
+      path: CERTIFICATIONS,
+      component: <AboutPage />,
+    },
+    {
+      key: EDUCATION,
+      path: EDUCATION,
+      component: <AboutPage />,
+    },
+    {
+      key: PROJECTS,
+      path: PROJECTS,
+      component: <ProjectsPage />,
+    }
   ];
 
   return (
-    <main className="h-full w-full">
-      <Navbar />
-      <Container sx={{py:3 , height:'100%'}}>
+    <ThemeProvider>
+      <main className="h-full w-full">
+        <Navbar />
         <Routes>
           {routeItems.map((item) => (
             <Route
@@ -46,8 +61,8 @@ function App() {
             />
           ))}
         </Routes>
-      </Container>
-    </main>
+      </main>
+    </ThemeProvider>
   );
 }
 

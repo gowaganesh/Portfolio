@@ -1,0 +1,1 @@
+- Completed B.E. in Computer Science and Engineering at KPR Institute of Engineering and Technology with 82%/100 in academics.

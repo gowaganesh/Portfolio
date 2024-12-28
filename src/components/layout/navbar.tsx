@@ -10,18 +10,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { constants } from "../../lib/utils/constants/constants";
-import workExperienceBanner from "../../assets/bg3.jpg";
-import projectsBanner from "../../assets/bg1.jpg";
-import homeBannerImage from "../../assets/bg2.jpg";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { Add } from "@mui/icons-material";
 
 const drawerWidth = 240;
 
 const DrawerAppBar = () => {
-  const { pathname } = useLocation();
   const { PORTFOLIO_USER_SHORT_NAME, ROUTES } = constants;
-  const { ABOUT, HOME, PROJECTS, EXPERIENCE } = ROUTES;
+  const { ABOUT, HOME, PROJECTS, RESUME, AWARDS, CERTIFICATIONS, EDUCATION} = ROUTES;
   const navItems = [
     { label: "Start Here", path: HOME },
     {
@@ -29,10 +25,13 @@ const DrawerAppBar = () => {
       path: ABOUT,
       subMenu: [
         { label: "Experience", path: ABOUT },
-        { label: "Projects", path: PROJECTS },
+        { label: "Awards", path: AWARDS },
+        { label: "Certifications", path: CERTIFICATIONS },
+        { label: "Education", path: EDUCATION },
       ],
     },
-    { label: "Resume", path: PROJECTS },
+    { label: "Projects", path: PROJECTS },
+    { label: "Resume", path: RESUME },
   ];
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -54,16 +53,6 @@ const DrawerAppBar = () => {
   const handleDrawerToggle = React.useCallback(() => {
     setMobileOpen((prevState) => !prevState);
   }, []);
-
-  // Memoize banner images mapping based on the pathname
-  const getBannerImages = React.useMemo(() => {
-    return {
-      [ABOUT]: workExperienceBanner,
-      [EXPERIENCE]: workExperienceBanner,
-      [HOME]: homeBannerImage,
-      [PROJECTS]: projectsBanner,
-    }[pathname || HOME];
-  }, [ABOUT, EXPERIENCE, HOME, PROJECTS, pathname]);
 
   const drawer = (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -107,21 +96,11 @@ const DrawerAppBar = () => {
     window !== undefined ? () => window.document.body : undefined;
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        backgroundImage: `url(${getBannerImages})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        height: "600px",
-        width: "100%",
-      }}
-    >
+    <>
       <AppBar
         elevation={0}
         component="nav"
-        position="sticky"
+        position="static"
         sx={{
           backgroundColor: "transparent",
           width: "100%",
@@ -139,7 +118,9 @@ const DrawerAppBar = () => {
               component="div"
               fontWeight={800}
               onClick={() => navigate("/")}
-              sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
+              sx={{       ":hover" :{
+                fontSize : 22
+              }, display: { xs: "none", sm: "block" }, cursor: "pointer" }}
             >
               {PORTFOLIO_USER_SHORT_NAME}
             </Typography>
@@ -151,6 +132,9 @@ const DrawerAppBar = () => {
                 key={item.label}
                 sx={{
                   color: "#fff",
+                  ":hover" :{
+                    fontWeight : 800
+                  },
                   ...(item.label === "Resume" && {
                     fontWeight: 600,
                     border: 2,
@@ -207,7 +191,7 @@ const DrawerAppBar = () => {
           {drawer}
         </Drawer>
       </nav>
-    </Box>
+    </>
   );
 };
 

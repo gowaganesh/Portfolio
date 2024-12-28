@@ -1,13 +1,27 @@
-## WORK
-I am currently a **Data Engineer - Application Development Analyst at Accenture** in Coimbatore, where I focus on building and maintaining robust data integration solutions for **BANK OF AMERICA**. My role involves consolidating structured and semi-structured data from a variety of sources, including APIs, databases, and complex JSON files, ensuring data consistency and quality throughout.
+#### About Me  
+I am a passionate and results-driven **Data Engineer** with over 4 years of experience in **Data Engineering**, **Data Migration**, **Data Ingestion**, **Analytics**, and **ETL processes**. My expertise spans working with structured and semi-structured data, automating data workflows, and delivering end-to-end data solutions.
 
-In my current position, I design and implement data pipelines using **Apache NiFi** for history, monthly, and daily data loading, while managing slowly changing dimensions (SCD) to accommodate evolving data requirements. Additionally, I led an automation project that **reduced manual work by 97%**, generating SQL DDL statements for over 90 tables with more than 2000 fields—a task that significantly streamlined our database management process.
+<br/>
 
-Previously, as a Data Engineer - Application Development Associate (June 2021 - Feb 2023), I handled similar data pipeline responsibilities, focusing on large-scale data loads and automation. My independent end-to-end project experience includes data mapping, extraction, cleansing, transformation, and ingestion, with a commitment to timely deliverables, unit testing, and documentation from development through to production deployment.
+Currently, I work as an **Application Development Analyst** at **Accenture**, where I have independently designed and implemented scalable data pipelines, automated complex tasks, and ensured high-quality data for analysis and reporting. I have a proven track record of delivering impactful solutions that streamline processes and create value for clients.
 
-## Education
-I have a strong foundation in data engineering principles, particularly in data integration, pipeline design, and automation, allowing me to approach complex data challenges with both technical skills and a solutions-oriented mindset.
-## Side Hustles
-Outside of work, I am passionate about exploring and experimenting with new data engineering tools and processes, refining my understanding of automation in data workflows, and staying updated on trends in data integration and pipeline optimization.
-## Social
-I actively engage with other data professionals on LinkedIn, sharing my project insights and connecting with peers in the industry to discuss best practices and advancements in data engineering.
+<br/>
+
+#### Key Achievements
+
+- Automated SQL DDL creation for 90+ tables, saving significant manual effort.
+- Recognized with multiple awards, including the **Pinnacle Award FY24** and **Client Value Creation Awards**, for delivering exceptional value in data migration and validation projects.
+- Developed reusable frameworks using **Python**, **SQL**, and **NiFi** for data validation, transformation, and ingestion.
+
+#### Technical Skills
+- Programming: **Python**, **SQL**, **Pandas**, **Unix**
+- Tools: **Apache NiFi**, **Tableau**, **AutoSys**, **ETL Tools**
+- Databases: **Oracle**, **Teradata**, **Impala**
+- Cloud & Agile: **Microsoft Azure**, **Jira**, **Git**, **Agile Methodologies**
+- Expertise in **Data Analytics**, **Data Warehousing**, **ETL Testing**, and **Visualization**
+
+With a solid educational foundation in **Computer Science and Engineering** (B.E., 82%), I am driven by a proactive and solution-oriented approach, ensuring timely and impactful deliverables.
+
+<br/>
+
+Explore my portfolio to learn more about my journey and contributions to the world of data engineering.
