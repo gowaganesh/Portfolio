@@ -1,0 +1,7 @@
+- Appreciation from Leads, Manager, PO, BOFA Client, and Business for the creation of File Validation, Data Validation, and Data Comparison POC automations using Python and Pandas to validate 300+ source files in a single execution.
+- Recognition from the Leadership team for developing Tableau dashboards and generating QA reports without conflicting deliverables.
+- Pinnacle Award FY24 for creating extraordinary value in a short time.
+- Client Value Creation Award ([Link](https://drive.google.com/file/d/1UBH2XshL7bsTVAB1BCl0-muxs6YTrvJv/view?usp=sharing)) in Jun 2023 for handling a data migration project independently, supporting the Client.
+- Promoted to Application Development Analyst role ([Link 1](https://drive.google.com/file/d/1qZn9V3gC4CXH4kN2C6hOETI0-MSV0MHJ/view?usp=sharing), [Link 2](https://drive.google.com/file/d/14idcAgQZF1YTqtTA956nuC3wTBzoYOCs/view?usp=sharing)) in Mar 2023.
+- Client Value Creation Award ([Link](https://drive.google.com/file/d/1s4G1a6KW2HQcw3ijyF8R1wvGyF7B3YQS/view?usp=sharing)) in Dec 2022 for creating a data validation framework using Python, SQL, and Unix.
+- Rising Star Award ([Link](https://drive.google.com/file/d/1X_jiLfWp22Z1XFl2efo4iLQhh-BNA-Ah/view?usp=sharing)) in Jun 2022 for creating a data validation tool using NiFi for splitting Valid and Invalid Records.

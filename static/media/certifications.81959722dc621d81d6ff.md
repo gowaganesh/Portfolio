@@ -1,0 +1,3 @@
+- Microsoft Azure Fundamentals (AZ-900)
+- Completed SQLForge, Data Engineering, GenAI trainings provided by Accenture
+- 5-star rating on HackerRank (SQL)
