@@ -53,6 +53,22 @@ const AboutIndex = () => {
     }
   };
 
+  const getPageName = () => {
+    switch (currentPage) {
+      case ABOUT:
+        return "Work Experience";
+      case AWARDS:
+        return "Awards & Recognition";
+      case CERTIFICATIONS:
+        return "Certifications";
+      case EDUCATION:
+        return "Education";
+      default:
+        return "Work Experience";
+    }
+  };
+
+
   return (
     <>
       {imageUrl && <HeroImageContainer imageUrl={imageUrl} />}
@@ -93,6 +109,11 @@ const AboutIndex = () => {
 
           <Grid item xs={12} sm={9}>
             <Suspense fallback={<Typography>Loading...</Typography>}>
+              <Typography sx={{
+                visibility : {
+                  sm : 'hidden'
+                }
+              }} variant="h3" py={2}>{getPageName()}</Typography>
               {getPage()}
             </Suspense>
           </Grid>
