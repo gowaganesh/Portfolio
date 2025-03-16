@@ -6,7 +6,7 @@ import MarkdownRenderer from "../common/markdownRenderer";
 import home from "../../lib/data/home.md"
 const HomeIndex = () => {
 
-  return (
+  return ( 
     <>
       <HeroImageContainer imageUrl={homeBannerImage} />
       <AppContainer>
