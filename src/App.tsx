@@ -46,7 +46,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <main className="h-full w-full">
+      <main className="h-full w-full scroll-auto">
         <Navbar />
         <Routes>
           {routeItems.map((item) => (

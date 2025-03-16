@@ -6,7 +6,8 @@ const AppContainer = (props: PropsWithChildren) => {
     <Container
       sx={{
         py: { xs: 3, sm: 6 }, 
-        p : {xs : 2}
+        p : {xs : 2},
+        scrollBehavior : 'auto',
       }}
     >
       {props.children}
