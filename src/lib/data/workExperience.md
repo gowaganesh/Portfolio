@@ -1,4 +1,3 @@
-
 ##### Data Engineer (Application Development Analyst) - Accenture, Coimbatore  
 
 <br/>
